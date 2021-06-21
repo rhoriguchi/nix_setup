@@ -14,6 +14,7 @@
     ./htop
     ./neofetch
     ./onedrive.nix
+    ./protonvpn-cli.nix
     ./ssh.nix
     ./vscode.nix
     ./zsh.nix
