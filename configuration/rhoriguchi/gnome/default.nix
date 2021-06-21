@@ -6,12 +6,13 @@ let
     pkgs.gnomeExtensions.clock-override
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.dynamic-panel-transparency
+    pkgs.gnomeExtensions.emoji-selector
     pkgs.gnomeExtensions.fuzzy-app-search
     pkgs.gnomeExtensions.unite
     pkgs.gnomeExtensions.window-is-ready-remover
   ];
 in {
-  fonts.fonts = [ pkgs.jetbrains-mono ];
+  fonts.fonts = [ pkgs.jetbrains-mono pkgs.noto-fonts-emoji ];
 
   users.users.rhoriguchi.packages = extensions ++ [ pkgs.papirus-icon-theme pkgs.yaru-theme ];
 
@@ -208,6 +209,17 @@ in {
         show-windows-preview = true;
         transparency-mode = "FIXED";
         unity-backlit-items = false;
+      };
+      "org/gnome/shell/extensions/emoji-selector" = {
+        always-show = true;
+        emoji-keybinding = [ ];
+        emojisize = 30;
+        gender = 2;
+        nbcols = 11;
+        position = "top";
+        recently-used = [ "❤️" "👍" "🤔" "🤗" "🤦‍♂️" "🤭" "🤷‍♂️" "🥰" "😂" "😊" "😋" "😍" "😏" "😕" "😘" "😜" "😠" "😭" "🙈" ];
+        skin-tone = 1;
+        use-keybinding = false;
       };
       "org/gnome/shell/extensions/dynamic-panel-transparency" = {
         enable-background-color = false;
